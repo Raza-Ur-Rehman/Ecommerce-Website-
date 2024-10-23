@@ -1,13 +1,12 @@
-
-const Button = ({text, icon}) => {
+const Button = ({ text, icon, link }) => {
   return (
-    <div>
-    <Button className="bg-slate-950 text-white p-[12px] text-lg rounded-md flex  text-center gap-5 items-center cursor-pointer">
+    <>
+      <a href={link} className="bg-slate-950 text-white p-[12px] text-lg rounded-md flex  text-center gap-5 items-center cursor-pointer">
         {text}
         {icon}
-    </Button>
-    </div>
-  )
-}
+      </a>
+    </>
+  );
+};
 
-export default Button
+export default Button;
