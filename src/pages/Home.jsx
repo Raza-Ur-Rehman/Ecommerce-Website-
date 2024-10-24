@@ -1,39 +1,65 @@
-
-import { useContext } from "react"
-import Button from "../Components/common/Button"
-import Card from "../Components/common/Card"
-import Header from "../Components/Header"
-import { ProductContext } from "../Context/ProductContext"
+import { useContext } from "react";
+import Button from "../Components/common/Button";
+import Card from "../Components/common/Card";
+import Header from "../Components/Header";
+import { ProductContext } from "../Context/ProductContext";
+import Banner from "../Components/Banner";
 
 const Home = () => {
   const productData = useContext(ProductContext);
   return (
-    <div>
-      <Header/>
-      {/* <Button text="go to collection"/> */}
-      <div className="flex flex-wrap bg-slate-300">
-        {productData?.products?.map((item, key) => {
-          const {title,description,images,price,} = item;
-          return (
-            // <Card
-            //   key={key}
-            //   title={title}
-            //   description={description}
-            //   images={images}
-            //   price={price}/>
-            <div key={key} className="w-1/3 p-6">
-              <Card
-                title={title}
-                description={description}
-                images={images}
-                price={price}
-              />
-            </div>
-          );
-        })}
+    <div className="">
+      <div className="my-3">
+        <Header />
+      </div>
+      {/* banner */}
+    <div className="bg-orange-500">
+      <Banner/>
+    </div>
+      {/* Featured Products */}
+      <div className="bg-green-300 mb-3 h-auto">
+        <h1 className="text-3xl px-8 pt-4 font-semibold">Featured Products</h1>
+        <div className="flex p-4 gap-4">
+          {productData?.products?.slice(0, 4).map((item, key) => {
+            const { title, description, images, price } = item;
+
+            const cardClass =
+              key === 0 || key === 3 ? "w-full h-[500px]" : "w-1/2 h-1/2";
+
+            return (
+              <div key={key} className={`${cardClass}bg-white  p-4 flex flex-col items-center`}>
+                  <Card
+                    title={title}
+                    description={description}
+                    images={images}
+                    price={price}
+                  />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      {/* card */}
+      <div className=" bg-slate-300">
+        <h1 className="text-3xl px-8 pt-4 font-semibold">New Arrivals</h1>
+        <div className="flex flex-wrap p-2">
+          {productData?.products?.slice(0, 12).map((item, key) => {
+            const { title, description, images, price } = item;
+            return (
+              <div key={key} className="w-1/4 p-5 h-[500px] flex flex-wrap ">
+                  <Card
+                    title={title}
+                    description={description}
+                    images={images}
+                    price={price}
+                  />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
