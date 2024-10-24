@@ -4,8 +4,15 @@ import Card from "../Components/common/Card";
 import Header from "../Components/Header";
 import { ProductContext } from "../Context/ProductContext";
 import Banner from "../Components/Banner";
+import Slider from "react-slick";
 
 const Home = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,}
   const productData = useContext(ProductContext);
   return (
     <div className="">
@@ -13,9 +20,11 @@ const Home = () => {
         <Header />
       </div>
       {/* banner */}
-    <div className="bg-orange-500">
-      <Banner/>
-    </div>
+      <div className="">
+      {/* <Slider {...settings}>
+      <Banner />
+      </Slider> */}
+      </div>
       {/* Featured Products */}
       <div className="bg-green-300 mb-3 h-auto">
         <h1 className="text-3xl px-8 pt-4 font-semibold">Featured Products</h1>
