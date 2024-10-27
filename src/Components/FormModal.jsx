@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const FormModal = () => {
+const FormModal = ({ title }) => {
   const {
     register,
     handleSubmit,
@@ -18,9 +18,7 @@ const FormModal = () => {
       <div className=" flex justify-center py-6 my-8">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow-xl rounded-md flex flex-col justify-center gap-4 w-[500px] h-[450px] p-4">
-            <h1 className="text-4xl font-semibold text-center my-3">
-              Contact Us
-            </h1>
+            <h1 className="text-4xl font-semibold text-center my-3">{title}</h1>
             <input
               type="text"
               placeholder="First Name"
@@ -30,7 +28,7 @@ const FormModal = () => {
                 errors.FirstName ? "error" : "border-gray-500"
               } border rounded`}
             />
-            <input
+            {/* <input
               type="text"
               placeholder="Last Name"
               {...register("LastName", { required: true, maxLength: 20 })}
@@ -38,7 +36,7 @@ const FormModal = () => {
               className={`p-2 ${
                 errors.FirstName ? "error" : "border-gray-500"
               } border rounded`}
-            />
+            /> */}
             <input
               type="email"
               placeholder="Email"
@@ -48,26 +46,29 @@ const FormModal = () => {
                 errors.Email ? "error" : "border-gray-500"
               } border rounded`}
             />
-            <div className="flex">
             <input
-              {...register("Gender", { required: true })}
-              type="radio"
-              value="Male"
+              type="password"
+              placeholder="Password"
+              {...register("Password", {
+                min: 8,
+              })}
               aria-invalid={errors.Email ? "true" : "false"}
               className={`p-2 ${
                 errors.Email ? "error" : "border-gray-500"
-              } border rounded mt-4`}
+              } border rounded`}
             />
-            <input
+            <select
               {...register("Gender", { required: true })}
-              type="radio"
-              value="Female"
               aria-invalid={errors.Email ? "true" : "false"}
               className={`p-2 ${
                 errors.Email ? "error" : "border-gray-500"
-              } border rounded mt-4`}
-            />
-            </div>
+              } border rounded`} 
+            >
+              <option value="" disabled>Select a Gender</option>
+              <option value="Male">Male</option>
+              <option value=" Female"> Female</option>
+              <option value="Other"  >Other</option>
+            </select>
 
             <input
               type="submit"

@@ -55,7 +55,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      <FormModal/>
+      <FormModal title={"SignIn"}/>
     </div>
   );
 };

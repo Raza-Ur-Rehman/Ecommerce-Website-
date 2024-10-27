@@ -27,7 +27,7 @@ img {
 .error {
     border-width: 1px 1px 1px 10px;
     border-style: solid;
-    border-color: rgb(173, 0, 61) rgb(197, 1, 69) rgb(191, 22, 80) rgb(218, 1, 81);
+    border-color: rgb(173, 0, 61) rgb(197, 1, 69) rgb(191, 22, 80) rgb(240, 3, 35);
     border-image: initial;
     background: rgb(251, 236, 242);
 }
