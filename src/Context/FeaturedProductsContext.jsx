@@ -12,7 +12,7 @@ export const FeaturedProductProvider = ({children}) => {
         'https://fakestoreapi.in/api/products'
       );
       setFeaturedProducts(response?.data.products);
-      console.log(response.data.products);
+  
       
       
     } catch (error) {

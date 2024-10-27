@@ -15,3 +15,11 @@ export const bannerData = [
         images: "/assets/img/bannerimg3.png",
     },                                                       
 ];                                                                                                                                                    
+export const DualBannerData = [
+    {
+        images: "/assets/img/Dualbannerimg1.png",
+    },
+    {
+        images: "/assets/img/Dualbannerimg2.png",
+    }                                                     
+];                                                                                                                                                    

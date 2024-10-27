@@ -5,5 +5,86 @@
 body {
     max-width: 1250px;
     font-family: 'Poppins', sans-serif;
-    margin: 0 auto ;
+    margin: 0 auto;
+}
+
+input {
+    @apply w-full px-4 py-2 text-gray-700 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-[#1C2023];
+}
+
+textarea {
+    @apply w-full h-28 px-4 py-2 text-gray-700 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-[#1C2023];
+}
+
+.error {
+    border-width: 1px 1px 1px 10px;
+    border-style: solid;
+    border-color: rgb(173, 0, 61) rgb(197, 1, 69) rgb(191, 22, 80) rgb(218, 1, 81);
+    border-image: initial;
+    background: rgb(251, 236, 242);
+}
+/* .dot {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #1C2023;
+    display: flex;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+
+
+} */
+
+/* new arrival card style // */
+.arrivalCard {
+    width: 24%;
+    height: 380px;
+    /* padding: 8px; */
+    /* display: flex; */
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.arrivalCard img {
+    width: 100%;
+    height: 70%;
+}
+
+.arrivalCard .price {
+    text-align: end;
+}
+
+.arrivalCard .contant-wrapper {
+    padding: 12px;
+}
+
+
+/* FlashCard style  */
+.FlashCard {
+    width: 90%;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.FlashCard img {
+    width: 100%;
+    height: 70%;
+    
+}
+
+.FlashCard .price {
+    text-align: start;
+    font-weight: 600;
+}
+
+.FlashCard .contant-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 12px;
+
 }
