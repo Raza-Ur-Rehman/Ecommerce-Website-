@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Card from "../Components/common/Card";
 import Header from "../Components/Header";
 import { ProductContext } from "../Context/ProductContext";
@@ -7,6 +7,9 @@ import Banner from "../Components/Banner";
 import { FeaturedProductContext } from "../Context/FeaturedProductsContext";
 import DualBanner from "../Components/DualBanner";
 import Slider from "react-slick";
+import { FeaturedCatagaryContext } from "../Context/FeaturedCatagaryContaxt";
+import Modal from "../Components/common/Modal";
+import Button from "../Components/common/Button";
 
 const Home = () => {
   const settings = {
@@ -20,39 +23,76 @@ const Home = () => {
   };
   const productData = useContext(ProductContext);
   const FeaturedProductData = useContext(FeaturedProductContext);
+  const FeaturedCatagaryData = useContext(FeaturedCatagaryContext);
+
+  const findId = (id) => {
+    const filteredData = FeaturedProductData.FeaturedProducts.find(
+      (item) => item.id == id
+    );
+    setModalShow(true);
+    setIsFilter(filteredData);
+  };
+
+  const [isfilter, setIsFilter] = useState(
+    FeaturedProductData.FeaturedProducts[0]
+  );
+  // console.log(isfilter);
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className="">
+      {/* Header  */}
       <div className="my-3">
         <Header />
       </div>
-      {/* banner */}
+      {/* Banner */}
       <div className="container">
         <Banner />
       </div>
-
+      {/* Dual Banner  */}
       <div className="container  flex justify-between gap-2 my-6 p-4">
         <DualBanner />
+      </div>
+      {/* Featured Catagaries */}
+      <div className=" my-5 p-4  ">
+        <h1 className="text-3xl p-4 font-semibold">Featured Catagaries </h1>
+        <div className="slider-container px-3 ">
+          <Slider {...settings}>
+            {FeaturedCatagaryData?.FeaturedCatagary?.slice(0, 10).map(
+              (item, key) => {
+                const { name, image } = item;
+                return (
+                  <div className="catagaryCard " key={key}>
+                    <Card title={name} description="" images={image} price="" />
+                  </div>
+                );
+              }
+            )}
+          </Slider>
+        </div>
       </div>
       {/* Featured Products */}
       <div className=" my-5 p-4  ">
         <h1 className="text-3xl p-4 font-semibold">Featured Products</h1>
         <div className="slider-container px-3">
           <Slider {...settings}>
-            {FeaturedProductData?.FeaturedProducts?.map(
-              (item, key) => {
-                const { title, description, image, price } = item;
-                return (
-                    <div className= 'FlashCard  ' key={key}>
-                      <Card
-                        title={title}
-                        description={description}
-                        images={image}
-                        price={price}
-                      />
-                    </div>
-                );
-              }
-            )}
+            {FeaturedProductData?.FeaturedProducts?.map((item, key) => {
+              const { title, description, image, price } = item;
+              return (
+                <div
+                  className="FlashCard  "
+                  key={key}
+                  onClick={() => findId(item.id)}
+                >
+                  <Card
+                    title={title.slice(0, 20) + "..."}
+                    description={description.slice(0, 30) + "..."}
+                    images={image}
+                    price={"$" + price}
+                  />
+                </div>
+              );
+            })}
           </Slider>
         </div>
       </div>
@@ -67,15 +107,21 @@ const Home = () => {
             return (
               <div key={key} className={arrivalCard}>
                 <Card
-                  title={title}
-                  description={description}
+                  title={title.slice(0, 25) + "..."}
+                  description={description.slice(0, 35) + "..."}
                   images={images}
-                  price={price}
+                  price={"$" + price}
                 />
               </div>
             );
           })}
         </div>
+      </div>
+      {/* OnSelling Section  */}
+
+      <div className="m-4">
+        <Button text="open Modal" />
+        <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
       </div>
     </div>
   );
