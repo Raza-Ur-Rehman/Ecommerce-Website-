@@ -96,7 +96,10 @@ const Home = () => {
           </Slider>
         </div>
       </div>
-
+      {/* Modal   */}
+      <div className="m-4">
+        <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
+      </div>
       {/*Arrival  card */}
       <div className="">
         <h1 className="text-3xl px-8 py-4 font-semibold">New Arrivals</h1>
@@ -116,12 +119,6 @@ const Home = () => {
             );
           })}
         </div>
-      </div>
-      {/* OnSelling Section  */}
-
-      <div className="m-4">
-        <Button text="open Modal" />
-        <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
       </div>
     </div>
   );

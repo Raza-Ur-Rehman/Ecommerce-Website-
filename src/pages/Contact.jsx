@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "../Components/Header";
 import { useForm } from "react-hook-form";
+import FormModal from "../Components/FormModal";
 
 const Contact = () => {
   const {
@@ -54,6 +55,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
+      <FormModal/>
     </div>
   );
 };

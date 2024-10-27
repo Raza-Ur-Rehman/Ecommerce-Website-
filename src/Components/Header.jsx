@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom"
+import Modal from "./common/Modal";
 
 const Header = () => {
+  const [modalShow, setModalShow] = useState(false);
+  console.log(modalShow);
+  
   return (
     <>
       <div className="flex shadow-md rounded-xl p-3 px-14 items-center" >
@@ -21,8 +26,20 @@ const Header = () => {
                 {/* <div className="dot"></div> */}
             </NavLink>
         </div>
-        <div className="w-2/6 px-6 font-normal text-end">
-            <h3>Login/Signup</h3>
+        <div className="flex w-2/6 px-6 font-medium justify-center gap-2">
+            <NavLink >
+                <h3>SignIn</h3>
+                {/* <div className="dot"></div> */}
+            </NavLink>
+            <span>/</span>
+            <NavLink >
+                <h3>SignUp</h3>
+                {/* <div className="dot"></div> */}
+            </NavLink>
+             {/* Modal   */}
+      <div className="m-4">
+        <Modal modal={modalShow} setModal={setModalShow}  />
+      </div>
         </div>
       </div>
     </>
