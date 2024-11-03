@@ -15,7 +15,7 @@ const Home = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 3,
     autoplay: true,
     speed: 2000,
@@ -40,22 +40,22 @@ const Home = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className="">
+    <div className="container w-full">
       {/* Header  */}
-      <div className="my-3">
+      <div className="container py-3">
         <Header />
       </div>
       {/* Banner */}
-      <div className="container">
+      <div className="container w-full">
         <Banner />
       </div>
       {/* Dual Banner  */}
-      <div className="container  flex justify-between gap-2 my-6 p-4">
+      <div className="container p-3">
         <DualBanner />
       </div>
       {/* Featured Catagaries */}
-      <div className=" my-5 p-4  ">
-        <h1 className="text-3xl p-4 font-semibold">Featured Catagaries </h1>
+      <div className="container my-2">
+        <h1 className="text-3xl p-5 font-semibold text-center">Featured Catagaries </h1>
         <div className="slider-container px-3 ">
           <Slider {...settings}>
             {FeaturedCatagaryData?.FeaturedCatagary?.slice(0, 10).map(
@@ -72,21 +72,21 @@ const Home = () => {
         </div>
       </div>
       {/* Featured Products */}
-      <div className=" my-5 p-4  ">
-        <h1 className="text-3xl p-4 font-semibold">Featured Products</h1>
+      <div className="container my-2">
+        <h1 className="text-3xl p-5 font-semibold text-center"> Featured Products</h1>
         <div className="slider-container px-3">
           <Slider {...settings}>
             {FeaturedProductData?.FeaturedProducts?.map((item, key) => {
               const { title, description, image, price } = item;
               return (
                 <div
-                  className="FlashCard  "
+                  className="FlashCard"
                   key={key}
                   onClick={() => findId(item.id)}
                 >
                   <Card
-                    title={title.slice(0, 20) + "..."}
-                    description={description.slice(0, 30) + "..."}
+                    title={title.slice(0, 18) + "..."}
+                    description={description.slice(0, 25) + "..."}
                     images={image}
                     price={"$" + price}
                   />
@@ -101,17 +101,17 @@ const Home = () => {
         <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
       </div>
       {/*Arrival  card */}
-      <div className="">
-        <h1 className="text-3xl px-8 py-4 font-semibold">New Arrivals</h1>
-        <div className="flex flex-wrap p-3 gap-4">
+      <div className="container my-2 ">
+        <h1 className="text-3xl p-5 font-semibold text-center">New Arrivals</h1>
+        <div className="flex flex-wrap p-4 gap-3 justify-center ">
           {productData?.products?.slice(0, 12).map((item, key) => {
             const { title, description, images, price } = item;
-            const arrivalCard = "arrivalCard";
+            const arrivalCard = "arrivalCard md:w-[48%] lg:w-[30%] xl:w-[24%]";
             return (
-              <div key={key} className={arrivalCard}>
+              <div className={arrivalCard} key={key} onClick={() => {}}>
                 <Card
-                  title={title.slice(0, 25) + "..."}
-                  description={description.slice(0, 35) + "..."}
+                  title={title.slice(0, 22) + "..."}
+                  description={description.slice(0, 33) + "..."}
                   images={images}
                   price={"$" + price}
                 />
