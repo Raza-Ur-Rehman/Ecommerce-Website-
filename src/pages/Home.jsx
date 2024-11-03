@@ -42,11 +42,13 @@ const Home = () => {
   return (
     <div className="container w-full">
       {/* Header  */}
-      <div className="container py-3">
+      
+        <div className="container  top-0 z-50 py-3 bg-white">
         <Header />
       </div>
-      {/* Banner */}
-      <div className="container w-full">
+     <div className="center-contant h-full">
+       {/* Banner */}
+       <div className="container w-full">
         <Banner />
       </div>
       {/* Dual Banner  */}
@@ -119,6 +121,10 @@ const Home = () => {
             );
           })}
         </div>
+      </div>
+     </div>
+     <div className="container py-3 fixed bottom-0 bg-white">
+        <Header />
       </div>
     </div>
   );
