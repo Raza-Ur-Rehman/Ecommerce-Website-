@@ -6,47 +6,54 @@ const Modal = ({ modal, setModal, data }) => {
   const { description, price, title, image } = selectedImgData || {};
 
   useEffect(() => {
-      setSelectedImgData(data);
+    setSelectedImgData(data);
   }, [data]);
-
- 
-
 
   return (
     <>
       {modal && (
-        <div className=" h-full w-full fixed top-0 right-0 z-10 flex items-center justify-center bg-[#0000004d] " onClick={() => setModal(false)}>
-          <div className="flex h-[500px] w-[1000px] bg-white rounded-xl">
-            <div className="w-h-full  p-2">
+        <div
+          className=" h-full w-full fixed top-0 right-0 p-4 z-10 flex items-center justify-center bg-[#0000004d] "
+          
+        >
+          <div className="flex h-[80%] w-[1000px] bg-white p-1 rounded-xl flex-col ">
+          <button
+              className="h-5 text-end text-2xl md:text-4xl"
+              onClick={() => setModal(false)}
+            >
+              <i class="fa-regular fa-circle-xmark"></i>
+            </button>
+            <div className="w-full h-[40%] md:h-[50%] p-2  ">
               <img
                 className="object-contain w-full h-full rounded-l-xl "
                 src={image}
                 alt=""
               />
             </div>
-            <div className="w-1/2 relative p-2 flex justify-between">
-              <button
-                className="absolute top-0 right-0 text-3xl p-2 rounded-full"
-                onClick={() => setModal(false)}
-              >
-                <i class="fa-regular fa-circle-xmark"></i>
-              </button>
-              <div className="flex flex-col gap-3 my-3 px-4 ">
-              <h2 className="text-xl text-[#1C2023] font-semibold h-[30%] p-2 ">
-                {title}
-              </h2>
-              <hr />
-                <h4 className="text-[#1C2023] text-xl font-semibold h-[8%] p-2">
-                  {"$"+price}
+            <div className=" p-2  flex justify-between w-full h-full">
+              <div className="flex flex-col gap-3 ">
+                <div className="h-full">
+                <h2 className=" text-md md:text-xl text-[#1C2023] font-semibold p-2">
+                  {title?.slice(0, 55)}
+                </h2>
+                <hr />
+
+                <p className=" text-xs text-gray-400 p-2 md:text-sm">
+                  {description?.slice(0, 500)}
+                </p>
+                </div>
+                <div className="h-full w-full flex justify-between items-center">
+                <h4 className="text-[#1C2023] text-xl md:text-2xl font-semibold p-2 ">
+                  {"$" + price}
                 </h4>
-                
-              <p className=" text-xs  h-1/2 text-gray-400 p-2 ">
-                {description?.slice(0,550)}
-              </p>
-              <hr  />
-              <div className=" bg-[#1C2023] text-white flex justify-center  text-2xl h-[10%] rounded-lg ">
-                <Button  text={"Add to Cart"} icon={<i class="fa-solid fa-cart-shopping"></i>}/>
-              </div>
+                <hr />
+                <div className=" bg-[#1C2023]  text-white text-center flex justify-end p-2 md:p-4 md:px-6 text-2xl rounded-lg  ">
+                  <Button
+                    text={"Add to Cart"}
+                    icon={<i class="fa-solid fa-cart-shopping"></i>}
+                  />
+                </div>
+                </div>
               </div>
             </div>
           </div>

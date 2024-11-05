@@ -4,7 +4,6 @@ import Modal from "./common/Modal";
 
 const Header = () => {
   const [modalShow, setModalShow] = useState(false);
-  console.log(modalShow);
   useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {
@@ -18,7 +17,7 @@ const Header = () => {
   return (
     <>
       <div className="flex shadow-md rounded-xl p-3 items-center 
-     bg-white justify-between w-full h-auto header-section "
+     bg-white justify-between  h-auto header-section "
       
       >
         <div className=" cursor-pointer w-full px-5">
