@@ -56,7 +56,7 @@ img {
 
 .arrivalCard img {
     width: 100%;
-    height: 80%;
+    height: 70%;
 }
 
 .arrivalCard .price {
@@ -118,10 +118,4 @@ background-color: #ffffff;
     justify-content: space-between;
     gap: 12px;
     /* background-color: aqua; */
-}
-@media (min-width:768px) {
-    .arrivalCard img {
-        width: 100%;
-        height: 70%;
-    }
 }
