@@ -14,7 +14,6 @@ import Button from "../Components/common/Button";
 const Home = () => {
   const getSettings = () => {
     if (window.innerWidth <= 480) {
-      // Mobile view settings
       return {
         dots: false,
         infinite: true,
@@ -22,21 +21,9 @@ const Home = () => {
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 4000,
       };
     } else if (window.innerWidth <= 768) {
-      // Tablet view settings
-      return {
-        dots: false,
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 5000,
-      };
-    } else if (window.innerWidth <= 1024) {
-      // Small desktop view settings
       return {
         dots: false,
         infinite: true,
@@ -44,18 +31,27 @@ const Home = () => {
         slidesToScroll: 2,
         autoplay: true,
         speed: 2000,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 4000,
       };
-    } else {
-      // Default settings for larger screens
-      return {
+    } else if (window.innerWidth <= 1024) {
+      return {                                                        
         dots: false,
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll:3,
         autoplay: true,
         speed: 2000,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 4000,
+      };
+    } else {
+      return {
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 4,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 4000,
       };
     }
   };
@@ -85,7 +81,7 @@ const Home = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className=" w-full">
+    <div className=" w-full p-4">
       <div className=" py-3">
         <Header />
       </div>
@@ -100,7 +96,7 @@ const Home = () => {
         </div>
         {/* Featured Catagaries */}
         <div className="my-2">
-          <h1 className="text-3xl p-5 font-semibold text-center">
+          <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
             Featured Catagaries{" "}
           </h1>
           <div className="slider-container px-3 ">
@@ -125,7 +121,7 @@ const Home = () => {
         </div>
         {/* Featured Products */}
         <div className=" my-2">
-          <h1 className="text-3xl p-5 font-semibold text-center">
+          <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
             Featured Products
           </h1>
           <div className="slider-container px-3">
@@ -157,14 +153,14 @@ const Home = () => {
         </div>
         {/*Arrival  card */}
         <div className=" my-2 ">
-          <h1 className="text-3xl p-5 font-semibold text-center">
+          <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
             New Arrivals
           </h1>
           <div className="flex flex-wrap p-4 gap-3 justify-center ">
             {productData?.products?.slice(0, 12).map((item, key) => {
               const { title, description, images, price } = item;
               const arrivalCard =
-                "arrivalCard md:w-[48%] lg:w-[30%] xl:w-[24%]";
+                "arrivalCard md:w-[46%] lg:w-[30%] xl:w-[24%]";
               return (
                 <div className={arrivalCard} key={key} onClick={() => {}}>
                   <Card
@@ -172,6 +168,7 @@ const Home = () => {
                     description={description.slice(0, 33) + "..."}
                     images={images}
                     price={"$" + price}
+                    icon={<i class="fa-solid fa-cart-shopping text-black"></i>}
                   />
                 </div>
               );

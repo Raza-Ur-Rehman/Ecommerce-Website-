@@ -35,7 +35,7 @@ const Product = () => {
             const { title, description, image, price } = item;
             return (
               <div
-                className="arrivalCard "
+                className="arrivalCard md:w-[48%] lg:w-[30%] xl:w-[24%]"
                 key={key}
                 onClick={() => findId(item.id)}
               >
@@ -44,6 +44,7 @@ const Product = () => {
                   description={description.slice(0, 30) + "..."}
                   images={image}
                   price={"$" + price}
+                  icon={<i class="fa-solid fa-cart-shopping text-black"></i>}
                 />
               </div>
             );
