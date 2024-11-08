@@ -16,13 +16,13 @@ const Header = () => {
     scrollTop >= 250 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');}
   return (
     <>
-      <div className="flex shadow-md rounded-xl p-3 items-center 
-     bg-white justify-between  h-auto header-section "
+      <div className="flex shadow-md rounded-xl p-3 items-center bg-white
+      justify-between  header-section "
       
       >
         <div className=" cursor-pointer w-full px-5">
           <img
-            className=" object-contain rounded-lg w-[95px] md:w-[170px] "
+            className=" object-contain rounded-lg w-[95px] md:w-[140px] "
             src="/assets/img/logo.svg"
             alt="LOGO." 
           />

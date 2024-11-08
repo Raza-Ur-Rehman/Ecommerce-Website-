@@ -18,7 +18,7 @@ const Banner = () => {
   return (
     <div className="slider-container px-10 rounded-xl">
       <Slider {...settings}>
-        {bannerData.map((item, key) => (
+        {bannerData.slice(0,3).map((item, key) => (
           <div key={key} className=" h-[800px]">
             <img className=" rounded-xl object-cover" src={item.images} alt="" />
             {/* <div className="relative ">

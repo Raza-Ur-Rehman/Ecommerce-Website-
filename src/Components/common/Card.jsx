@@ -2,7 +2,7 @@ const Card = ({ title, images, price, description, icon }) => {
   return (
     <>
       <img
-        className=" object-cover hover:scale-105 "
+        className=" object-cover rounded-t-lg hover:scale-105"
         src={images || "/assets/img/defaultImg.png"}
         alt="Placeholder"
         onError={(e) => (e.target.src = "/assets/img/defaultImg.png")}

@@ -81,14 +81,14 @@ const Home = () => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className=" w-full p-4">
+    <div className=" w-full px-4">
       <div className=" py-3">
         <Header />
       </div>
       <div className="center-contant h-full">
         {/* Banner */}
         <div className="w-full ">
-          <Banner />
+          <Banner/>
         </div>
         {/* Dual Banner  */}
         <div className=" p-3">
@@ -160,7 +160,7 @@ const Home = () => {
             {productData?.products?.slice(0, 12).map((item, key) => {
               const { title, description, images, price } = item;
               const arrivalCard =
-                "arrivalCard md:w-[46%] lg:w-[30%] xl:w-[24%]";
+                "arrivalCard md:w-[46%] lg:w-[30%] xl:w-[24%] ";
               return (
                 <div className={arrivalCard} key={key} onClick={() => {}}>
                   <Card
@@ -169,6 +169,30 @@ const Home = () => {
                     images={images}
                     price={"$" + price}
                     icon={<i class="fa-solid fa-cart-shopping text-black"></i>}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {/* top Brand */}
+        <div className="my-2">
+          <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
+            Top Brands
+          </h1>
+          <div className="flex flex-wrap gap-4 justify-center ">
+            {productData?.products?.slice(12, 24).map((item, key) => {
+              const { title, description, images, price } = item;
+              return (
+                <div
+                  className="brandCard md:w-[30%] lg:w-[20%] xl:w-[15%]"
+                  key={key}
+                  onClick={() => {}}
+                >
+                  <Card
+                    title={title.slice(0, 22) + "..."}
+                    images={images}
+                    
                   />
                 </div>
               );

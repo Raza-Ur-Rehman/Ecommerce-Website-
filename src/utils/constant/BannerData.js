@@ -7,6 +7,9 @@ export const bannerData = [
     },
     {
         images: "/assets/img/bannerimg3.png",
+    },
+    {
+        images: "/assets/img/bannerimg4.png",
     }
     // {
     //     title: "Summer Sale",
