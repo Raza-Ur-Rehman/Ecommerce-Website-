@@ -92,7 +92,7 @@ img {
     object-fit: cover;
 }
 
-.catagaryCard .contant-wrapper h1 {
+.catagaryCard .contant-wrapper  {
     padding: 12px;
     text-align: center;
     font-size: 20px;
@@ -131,38 +131,56 @@ img {
 .brandCard {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+    /* border-radius: 14px; */
     cursor: pointer;
     position: relative;
+    
 }
 
 .brandCard img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* position: relative; */
-    &:hover {
-       
-
-    }
-}
-
-.brandCard .contant-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
     
 }
 
 .brandCard .contant-wrapper {
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    position: absolute;
 }
-/* rounded-md object-cover transform transition-transform ease-in-out duration-500 group-hover:rotate-6 group-hover:scale-125 */
+.testimonalCard {
+    border: 1px solid #ddd;
+    padding: 15px;
+    height: fit-content;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+.testimonalCard img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.testimonalCard h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+.testimonalCard .discrption {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
+

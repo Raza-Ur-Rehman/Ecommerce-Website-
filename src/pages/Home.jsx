@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import { FeaturedCatagaryContext } from "../Context/FeaturedCatagaryContaxt";
 import Modal from "../Components/common/Modal";
 import Button from "../Components/common/Button";
+import { testimonialsData } from "../utils/constant/testimonialData";
 
 const Home = () => {
   const getSettings = () => {
@@ -34,11 +35,11 @@ const Home = () => {
         autoplaySpeed: 4000,
       };
     } else if (window.innerWidth <= 1024) {
-      return {                                                        
+      return {
         dots: false,
         infinite: true,
         slidesToShow: 4,
-        slidesToScroll:3,
+        slidesToScroll: 3,
         autoplay: true,
         speed: 2000,
         autoplaySpeed: 4000,
@@ -61,7 +62,7 @@ const Home = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   const productData = useContext(ProductContext);
   const FeaturedProductData = useContext(FeaturedProductContext);
   const FeaturedCatagaryData = useContext(FeaturedCatagaryContext);
@@ -88,7 +89,7 @@ const Home = () => {
       <div className="center-contant h-full">
         {/* Banner */}
         <div className="w-full ">
-          <Banner/>
+          <Banner />
         </div>
         {/* Dual Banner  */}
         <div className=" p-3">
@@ -97,9 +98,9 @@ const Home = () => {
         {/* Featured Catagaries */}
         <div className="my-2">
           <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
-            Featured Catagaries{" "}
+            Featured Catagaries
           </h1>
-          <div className="slider-container px-3 ">
+          <div className="slider-container px-10 ">
             <Slider {...settings}>
               {FeaturedCatagaryData?.FeaturedCatagary?.slice(0, 10).map(
                 (item, key) => {
@@ -124,7 +125,7 @@ const Home = () => {
           <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
             Featured Products
           </h1>
-          <div className="slider-container px-3">
+          <div className="slider-container px-10">
             <Slider {...settings}>
               {FeaturedProductData?.FeaturedProducts?.map((item, key) => {
                 const { title, description, image, price } = item;
@@ -136,10 +137,12 @@ const Home = () => {
                   >
                     <Card
                       title={title.slice(0, 20) + "..."}
-                      description={description.slice(0,28) + "..."}
+                      description={description.slice(0, 28) + "..."}
                       images={image}
                       price={"$" + price}
-                      icon={<i class="fa-solid fa-cart-shopping text-black"></i>}
+                      icon={
+                        <i class="fa-solid fa-cart-shopping text-black"></i>
+                      }
                     />
                   </div>
                 );
@@ -180,23 +183,41 @@ const Home = () => {
           <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
             Top Brands
           </h1>
-          <div className="flex flex-wrap gap-4 justify-center ">
+          <div className="flex flex-wrap  gap-6 justify-center ">
             {productData?.products?.slice(12, 24).map((item, key) => {
               const { title, description, images, price } = item;
               return (
                 <div
-                  className="brandCard md:w-[30%] lg:w-[20%] xl:w-[15%]"
+                  className="brandCard  md:w-[30%] lg:w-[20%] xl:w-[15%]"
                   key={key}
-                  onClick={() => {}}
                 >
-                  <Card
-                    title={title.slice(0, 22) + "..."}
-                    images={images}
-                    
-                  />
+                  <Card title={title.slice(0, 10)} images={images} />
                 </div>
               );
             })}
+          </div>
+        </div>
+        {/* testimonial */}
+        <div className=" my-2">
+          <h1 className="text-3xl p-5 font-semibold text-center md:text-start">
+            Testimonial
+          </h1>
+          <div className="slider-container px-10  ">
+            <Slider {...settings}>
+                {testimonialsData?.map((item, key) => {
+                  const { name, description, image } = item;
+                  return (
+                    <div className="testimonalCard" key={key}>
+                      <Card
+                        title={name}
+                        description={description}
+                        images={image}
+                      />
+                    </div>
+                  );
+                })}
+              
+            </Slider>
           </div>
         </div>
       </div>
