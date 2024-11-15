@@ -207,17 +207,47 @@ const Home = () => {
                 {testimonialsData?.map((item, key) => {
                   const { name, description, image } = item;
                   return (
-                    <div className="testimonalCard" key={key}>
+                    <div className="p-3">
+                      <div className="testimonalCard" key={key}>
                       <Card
                         title={name}
                         description={description}
                         images={image}
                       />
                     </div>
+                    </div>
                   );
                 })}
               
             </Slider>
+          </div>
+
+        </div>
+        {/* footer*/}
+        <div className="my-2 p-5 bg-black">
+          <div className="flex bg-red-600 justify-between items-center w-[90%] m-auto">
+          <div className=" cursor-pointer px-5 w-[20%] bg-slate-200">
+          <img
+            className=" object-contain rounded-lg w-[95px] md:w-[200px] "
+            src="/assets/img/logo.svg"
+            alt="LOGO." 
+          />
+        </div>
+          <div className="flex justify-around items-center bg-slate-500 w-[80%]">
+          <div className=" flex flex-col p-2 gap-3">
+          <span><a href="">Facebook</a></span>
+          <span><a href="">Instagram</a></span>
+          <span><a href="">Youtube</a></span>
+          <span><a href="">TikTok</a></span>
+          </div>
+          <div className=" flex flex-col p-2 gap-3">
+          <span><a href="">Facebook</a></span>
+          <span><a href="">Instagram</a></span>
+          <span><a href="">Youtube</a></span>
+          <span><a href="">TikTok</a></span>
+          </div>
+          
+          </div>
           </div>
         </div>
       </div>

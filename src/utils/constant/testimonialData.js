@@ -27,7 +27,7 @@ export const testimonialsData = [
     {
         name: "David Kim",
         description: "David is a frequent gift-giver who values prompt delivery and presentation.",
-        image: "https://picsum.photos/seed/david/80"  // Placeholder image for David
+        image: "https://picsum.photos/seed/david/80" // Placeholder image for David
     }
 ];
                            
