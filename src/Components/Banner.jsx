@@ -19,8 +19,8 @@ const Banner = () => {
     <div className="slider-container px-10 rounded-xl">
       <Slider {...settings}>
         {bannerData.slice(0,3).map((item, key) => (
-          <div key={key} className=" h-[800px]">
-            <img className=" rounded-xl object-cover" src={item.images} alt="" />
+          <div key={key} className=" w-full h-full xl:h-[800px]">
+            <img className=" rounded-xl object-contain xl:object-cover" src={item.images} alt="" />
             {/* <div className="relative ">
               <div className="flex justify-center gap-6 flex-col items-start absolute  w-3/5 h-full px-16 ">
                 <h1 className="text-md text-black  font-light">

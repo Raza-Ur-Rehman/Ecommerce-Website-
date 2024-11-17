@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const Modal = ({ modal, setModal, data }) => {
   const [selectedImgData, setSelectedImgData] = useState(data);
-  const { description, price, title, image } = selectedImgData || {};
+  const { description, price, title, image,images } = selectedImgData || {};
 
   useEffect(() => {
     setSelectedImgData(data);
@@ -18,10 +18,10 @@ const Modal = ({ modal, setModal, data }) => {
         >
           <div className="flex h-[80%] w-[1000px] bg-white p-1 rounded-xl flex-col ">
           <button
-              className="h-5 text-end text-2xl md:text-4xl"
+              className="h-5 text-end text-2xl md:text-4xl z-10"
               onClick={() => setModal(false)}
             >
-              <i class="fa-regular fa-circle-xmark"></i>
+              <i class="fa-regular fa-circle-xmark "></i>
             </button>
             <div className="w-full h-[40%] md:h-[50%] p-2  ">
               <img

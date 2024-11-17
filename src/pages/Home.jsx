@@ -75,11 +75,23 @@ const Home = () => {
     setModalShow(true);
     setIsFilter(filteredData);
   };
+  // const productFindId = (id) => {
+  //   const productFilteredData = productData.products.find(
+  //     (item) => item.id == id
+  //   );
+  //   setModalShow(true);
+  //   setisProductFilter(productFilteredData);
+  // };
 
   const [isfilter, setIsFilter] = useState(
     FeaturedProductData.FeaturedProducts[0]
   );
-  // console.log(isfilter);
+  // const [isProductFilter, setisProductFilter] = useState(
+  //   productData.products
+    
+  // );
+  console.log(productData.products);
+  // console.log(productData.products);
   const [modalShow, setModalShow] = useState(false);
 
   const style = {
@@ -160,7 +172,8 @@ const Home = () => {
         </div>
         {/* Modal   */}
         <div className="m-4">
-          <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
+          <Modal modal={modalShow} setModal={setModalShow} data={isfilter}/>
+          {/* <Modal modal={modalShow} setModal={setModalShow} data={isProductFilter} /> */}
         </div>
         {/*Arrival  card */}
         <div className=" my-2 ">
@@ -168,13 +181,14 @@ const Home = () => {
             New Arrivals
           </h1>
           <div className="flex flex-wrap p-4 gap-3 justify-center ">
-            {productData?.products?.slice(0, 12).map((item, key) => {
+            {productData?.products?.slice(0, 15).map((item, key) => {
               const { title, description, images, price } = item;
               return (
                 <div
-                  className="arrivalCard md:w-[46%] lg:w-[30%] xl:w-[24%] hover:-translate-y-2"
+                  className="arrivalCard md:w-[30%] lg:w-[24%] xl:w-[18%] hover:-translate-y-2 hover:shadow-lg"
                   key={key}
-                  onClick={() => {}}
+                  // onClick={() => {}}
+                  // onClick={() => productFindId(item.id)}
                 >
                   <Card
                     title={title.slice(0, 22) + "..."}
@@ -219,7 +233,7 @@ const Home = () => {
                 return (
                   <div className="p-3">
                     <div
-                      className="testimonalCard hover:-translate-y-2"
+                      className="testimonalCard hover:-translate-y-2 "
                       key={key}
                     >
                       <Card
@@ -235,8 +249,8 @@ const Home = () => {
           </div>
         </div>
         {/* subscription  */}
-        <div className="my-2 py-5">
-        <div className="px-5 sm:px-8 md:px-16 2xl:px-24 relative overflow-hidden flex flex-col sm:items-center xl:items-start rounded-lg bg-gray-200 py-10 md:py-14 lg:py-16">
+        <div className="my-2 p-6">
+        <div className="px-6 sm:px-8 md:px-16 2xl:px-24 relative overflow-hidden flex flex-col sm:items-center xl:items-start rounded-lg bg-gray-100 py-10 md:py-14 lg:py-16">
           <div className="-mt-1.5 lg:-mt-2 xl:-mt-0.5 text-center ltr:xl:text-left rtl:xl:text-right mb-7 md:mb-8 lg:mb-9 xl:mb-0">
             <h3 className="text-lg md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading mb-2 md:mb-2.5 lg:mb-3 xl:mb-3.5">
               Get Expert Tips In Your Inbox
@@ -245,7 +259,7 @@ const Home = () => {
               Subscribe to our newsletter and stay updated.
             </p>
           </div>
-          <form className="flex-shrink-0 w-full sm:w-96 md:w-[545px] md:mt-7 z-10">
+          <form className="flex-shrink-0 w-full sm:w-96 md:w-[545px] md:mt-7 ">
             <div class="flex flex-col items-start justify-end sm:flex-row">
               <div class="w-full">
                 <input
@@ -280,9 +294,9 @@ const Home = () => {
           <Footer />
         </div>
       </div>
-      {/* <div className="container py-3 fixed bottom-0 bg-white">
+      <div className="container py-3 fixed bottom-0 bg-white">
         <Header />
-      </div> */}
+      </div>
     </div>
   );
 };
