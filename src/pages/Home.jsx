@@ -75,22 +75,12 @@ const Home = () => {
     setModalShow(true);
     setIsFilter(filteredData);
   };
-  // const productFindId = (id) => {
-  //   const productFilteredData = productData.products.find(
-  //     (item) => item.id == id
-  //   );
-  //   setModalShow(true);
-  //   setisProductFilter(productFilteredData);
-  // };
 
   const [isfilter, setIsFilter] = useState(
     FeaturedProductData.FeaturedProducts[0]
   );
   // const [isProductFilter, setisProductFilter] = useState(
   //   productData.products
-    
-  // );
-  console.log(productData.products);
   // console.log(productData.products);
   const [modalShow, setModalShow] = useState(false);
 
@@ -294,7 +284,7 @@ const Home = () => {
           <Footer />
         </div>
       </div>
-      <div className="container py-3 fixed bottom-0 bg-white">
+      <div className="container py-3 fixed bottom-0 bg-white md:hidden ">
         <Header />
       </div>
     </div>

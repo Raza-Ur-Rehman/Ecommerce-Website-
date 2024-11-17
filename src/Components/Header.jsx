@@ -46,7 +46,7 @@ const Header = () => {
           <div className="w-full">
             <div className="flex px-6 font-medium justify-center gap-2">
               <NavLink>
-                <button>SignIn</button>
+                <button onClick={()=>setModalShow(true)}>SignIn</button>
                 {/* <div className="dot"></div> */}
               </NavLink>
               <span>/</span>
