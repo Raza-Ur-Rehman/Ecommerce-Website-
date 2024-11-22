@@ -91,7 +91,7 @@ const Header = () => {
         <Drawer
           closable
           destroyOnClose
-          title={<div className=" cursor-pointer w-full px-5">
+          title={<div className=" cursor-pointer w-full px-5 text">
             <img
               className=" object-contain rounded-lg w-[95px] md:w-[140px] "
               src="/assets/img/logo.svg"
