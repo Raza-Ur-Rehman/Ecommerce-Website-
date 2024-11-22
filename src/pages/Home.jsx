@@ -4,7 +4,6 @@ import Header from "../Components/Header";
 import { ProductContext } from "../Context/ProductContext";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
-
 import { FeaturedProductContext } from "../Context/FeaturedProductsContext";
 import DualBanner from "../Components/DualBanner";
 import Slider from "react-slick";
@@ -284,9 +283,9 @@ const Home = () => {
           <Footer />
         </div>
       </div>
-      <div className="container py-3 fixed bottom-0 bg-white md:hidden ">
+      {/* <div className=" py-3 fixed bottom-0 bg-white md:hidden ">
         <Header />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -26,16 +26,17 @@ const Product = () => {
       </div>
       <div className=" my-5 p-4  ">
         {/* Modal   */}
-      <div className="m-4">
-        <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
-      </div>
-        <h1 className="text-3xl p-4 font-semibold">AllProducts</h1>
-        <div className="px-2 flex flex-wrap gap-4">
+        <div className="m-4">
+          <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
+        </div>
+        <div className="">
+          <h1 className="text-3xl p-4 font-semibold">AllProducts</h1>
+        <div className="px-2 flex flex-wrap gap-4 justify-center">
           {FeaturedProductData?.FeaturedProducts?.map((item, key) => {
             const { title, description, image, price } = item;
             return (
               <div
-                className="arrivalCard md:w-[48%] lg:w-[30%] xl:w-[24%]"
+                className="arrivalCard md:w-[48%] lg:w-[30%] xl:w-[24%] "
                 key={key}
                 onClick={() => findId(item.id)}
               >
@@ -49,6 +50,7 @@ const Product = () => {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
     </div>

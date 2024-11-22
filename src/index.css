@@ -130,7 +130,7 @@ img {
 /* brandCard */
 .brandCard {
     width: 100%;
-    height: 100%;
+    height: 250px;
     /* border-radius: 14px; */
     cursor: pointer;
     position: relative;

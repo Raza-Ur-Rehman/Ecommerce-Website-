@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Modal from "./common/Modal";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -43,6 +44,13 @@ const Header = () => {
             </NavLink>
           </div>
           {/* w-2/6 */}
+          <div className="w-full">
+            <div className="flex font-medium justify-center ">
+             <button className="text-2xl">
+             <ShoppingCartOutlined />
+             </button>
+            </div>
+          </div>
           <div className="w-full">
             <div className="flex px-6 font-medium justify-center gap-2">
               <NavLink>
