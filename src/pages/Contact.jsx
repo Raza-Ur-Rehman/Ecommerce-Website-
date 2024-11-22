@@ -39,7 +39,7 @@ const Contact = () => {
       <div className="my-3">
         <Header />
       </div>
-      <div className=" flex justify-center py-6 my-8">
+      <div className=" flex justify-center py-6 my-8 ">
       <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -54,7 +54,7 @@ const Contact = () => {
           // transition: Bounce
         />
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="shadow-xl rounded-md flex flex-col justify-center gap-4 w-[500px] h-[450px] p-4">
+          <div className="shadow-xl rounded-md flex flex-col justify-center gap-4 w-[330px] md:w-[500px] h-[450px] p-4">
             <h1 className="text-4xl font-semibold text-center my-3">
               Contact Us
             </h1>

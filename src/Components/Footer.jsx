@@ -13,7 +13,7 @@ const Footer = () => {
               <ul className="text-xs lg:text-sm text-body flex flex-col space-y-3 lg:space-y-3.5">
                 <li className="flex items-baseline">
                   <span className="ltr:mr-3 rtl:ml-3 relative top-0.5 lg:top-1 text-sm lg:text-base">
-                  <i className="fa-brands fa-instagram"></i>
+                  {/* <i className="fa-brands fa-instagram"></i> */}
                     
                   </span>
                   <a
@@ -29,7 +29,7 @@ const Footer = () => {
                   </span>
                   <a
                     className="transition-colors duration-200 hover:text-black"
-                    href="https://twitter.com/redqinc"
+                    href="https://twitter.com"
                   >
                     Twitter
                   </a>
@@ -40,7 +40,7 @@ const Footer = () => {
                   </span>
                   <a
                     className="transition-colors duration-200 hover:text-black"
-                    href="https://www.facebook.com/redqinc/"
+                    href="https://www.facebook.com"
                   >
                     Facebook
                   </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                   </span>
                   <a
                     className="transition-colors duration-200 hover:text-black"
-                    href="https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw"
+                    href="https://www.youtube.com"
                   >
                     Youtube
                   </a>
@@ -66,7 +66,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/contact-us"
+                    href="/contact"
                   >
                     Contact Us
                   </a>
@@ -105,7 +105,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/contact-us"
+                    href="/contact"
                   >
                     Support Center
                   </a>
@@ -113,7 +113,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/"
+                    href="/contact"
                   >
                     Customer Support
                   </a>
@@ -121,7 +121,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/contact-us"
+                    href="/contact"
                   >
                     About Us
                   </a>
@@ -144,7 +144,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/faq"
+                    href="/"
                   >
                     FAQ &amp; Helps
                   </a>
@@ -175,7 +175,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/privacy"
+                    href="/"
                   >
                     Privacy policy update
                   </a>
@@ -183,7 +183,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/terms"
+                    href="/"
                   >
                     Terms &amp; conditions
                   </a>
@@ -191,7 +191,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/privacy"
+                    href="/"
                   >
                     Return Policy
                   </a>
@@ -214,7 +214,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/search"
+                    href="/"
                   >
                     Men's Wear
                   </a>
@@ -222,7 +222,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/search"
+                    href="/"
                   >
                     Men's Wear
                   </a>
@@ -230,7 +230,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/search"
+                    href="/"
                   >
                     Kid's Wear
                   </a>
@@ -238,7 +238,7 @@ const Footer = () => {
                 <li class="flex items-baseline">
                   <a
                     class="transition-colors duration-200 hover:text-black"
-                    href="/search"
+                    href="/"
                   >
                     Sports Wear
                   </a>
@@ -253,7 +253,7 @@ const Footer = () => {
               Copyright© 2024&nbsp;
               <a
                 class="font-semibold text-gray-700 transition-colors duration-200 ease-in-out hover:text-body"
-                href="https://redq.io"
+                href="/"
               >
                 REDQ
               </a>
