@@ -54,7 +54,7 @@ const Header = () => {
           <div className="w-full">
             <div className="flex px-6 font-medium justify-center gap-2">
               <NavLink>
-                <button onClick={()=>setModalShow(true)}>SignIn</button>
+                <button >SignIn</button>
                 {/* <div className="dot"></div> */}
               </NavLink>
               <span>/</span>
@@ -66,9 +66,9 @@ const Header = () => {
           </div>
         </div>
         {/* Modal   */}
-        <div className="m-4">
+        {/* <div className="m-4">
           <Modal modal={modalShow} setModal={setModalShow} />
-        </div>
+        </div> */}
       </div>
     </>
   );
