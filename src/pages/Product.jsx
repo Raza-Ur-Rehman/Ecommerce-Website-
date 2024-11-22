@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import { FeaturedProductContext } from "../Context/FeaturedProductsContext";
 import Card from "../Components/common/Card";
 import Modal from "../Components/common/Modal";
+import Footer from "../Components/Footer";
 
 const Product = () => {
   const FeaturedProductData = useContext(FeaturedProductContext);
@@ -30,6 +31,8 @@ const Product = () => {
           <Modal modal={modalShow} setModal={setModalShow} data={isfilter} />
         </div>
         <div className="">
+
+        </div>
           <h1 className="text-3xl p-4 font-semibold">AllProducts</h1>
         <div className="px-2 flex flex-wrap gap-4 justify-center">
           {FeaturedProductData?.FeaturedProducts?.map((item, key) => {
@@ -50,9 +53,13 @@ const Product = () => {
               </div>
             );
           })}
-        </div>
+
         </div>
       </div>
+      {/* footer*/}
+      <div className=" p-2">
+          <Footer />
+        </div>
     </div>
   );
 };

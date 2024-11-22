@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import FormModal from "../Components/FormModal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
+import Footer from "../Components/Footer";
 
 const Contact = () => {
   const {
@@ -92,7 +93,10 @@ const Contact = () => {
           </div>
         </form>
       </div>
-       
+       {/* footer*/}
+       <div className=" p-2">
+          <Footer />
+        </div>
       {/* <FormModal title={"SignIn"}/> */}
     </div>
   );
