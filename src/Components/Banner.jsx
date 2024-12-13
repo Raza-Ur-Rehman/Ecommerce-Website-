@@ -16,7 +16,7 @@ const Banner = () => {
     pauseOnHover: false,
   };
   return (
-    <div className="slider-container px-10 rounded-xl">
+    <div className="slider-container px-4 rounded-xl w-full">
       <Slider {...settings}>
         {bannerData.slice(0,3).map((item, key) => (
           <div key={key} className=" w-full h-full xl:h-[800px]">
